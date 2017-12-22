@@ -14,10 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const Vehicles = require(__dirname +'/models/vehicles');
 
-// var mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost/iotServer');
-// var db=mongoose.connections;
 
 router.use(function (req,res,next) {
   console.log("/" + req.method);
