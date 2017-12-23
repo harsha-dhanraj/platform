@@ -43,7 +43,7 @@ router.post('/', (req, res) => {      //checking for already existing device
           longitude: newVehicle.longitude
         }
         var connOpt={
-          url:"http://localhost:3031/api/v1/verify_registrations/vehicle_validity",
+          url:"https://polar-falls-73370.herokuapp.com/api/v1/verify_registrations/vehicle_validity",
           method:'POST',
           headers:{
               'content-Type':'application/json'
