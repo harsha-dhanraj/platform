@@ -100,4 +100,38 @@ app.use("*",function(req,res){
 
 app.listen((process.env.PORT || 3000),function(){
   console.log("Server is listening....");
+  var sendLocation = setInterval(function () {
+      console.log("sending co-ordinates.......");
+      var n = Math.random();
+      if (n > 0.5){
+        n = -(n)
+      }
+      var payload={
+        access_token:"8cb3c6e6a1d9dbd2d3ee0355f1869064",
+        lattitude: (18.5309+n).toFixed(4),
+        longitude: (73.8117+n).toFixed(4)
+      }
+      var connOpt={
+        url:"https://polar-falls-73370.herokuapp.com/api/v1/verify_registrations/vehicle_validity",
+        method:'POST',
+        headers:{
+            'content-Type':'application/json'
+        },
+        json:payload
+    
+    }
+    // var status=null;
+
+    request(connOpt,(err,res,body)=>{
+      var napp = express();
+        if(body.status){
+            console.log("Vehicle Status uploaded successfully");
+            // status = "true"
+        }else {
+            console.log("There is no vehicle registration");	
+            // status = "false"
+        }	
+        
+    });
+  }, 3600000);
 });
