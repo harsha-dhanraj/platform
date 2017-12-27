@@ -100,8 +100,10 @@ app.use("*",function(req,res){
 
 app.listen((process.env.PORT || 3000),function(){
   console.log("Server is listening....");
-  // var liveURL = "https://polar-falls-73370.herokuapp.com/api/v1/verify_registrations/vehicle_validity"
-  var devURL = "http://localhost:3031/api/v1/verify_registrations/vehicle_validity"
+  var liveURL = "https://polar-falls-73370.herokuapp.com/api/v1/verify_registrations/vehicle_validity"
+  // var devURL = "http://localhost:3031/api/v1/verify_registrations/vehicle_validity"
+  var liveAccessToken = "bf0946246700d23d4088e61dd5a12950"
+  // var devAccessToken = "337f890409db71492a5e0e5685b0c678"
   var sendLocation = setInterval(function () {
       console.log("sending co-ordinates.......");
       var n = Math.random();
@@ -109,7 +111,7 @@ app.listen((process.env.PORT || 3000),function(){
         n = -(n)
       }
       var payload={
-        access_token:"bf0946246700d23d4088e61dd5a12950",
+        access_token:liveAccessToken,
         lattitude: (18.5309+n).toFixed(4),
         longitude: (73.8117+n).toFixed(4)
       }
