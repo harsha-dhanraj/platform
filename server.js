@@ -137,5 +137,5 @@ app.listen((process.env.PORT || 3000),function(){
         }	
         
     });
-  }, 60000);
+  }, 3600000);
 });
