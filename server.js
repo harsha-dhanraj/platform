@@ -116,7 +116,7 @@ app.listen((process.env.PORT || 3000),function(){
         longitude: (73.8117+n).toFixed(4)
       }
       var connOpt={
-        url:devURL,
+        url:liveURL,
         method:'POST',
         headers:{
             'content-Type':'application/json'
