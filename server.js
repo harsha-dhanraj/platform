@@ -137,5 +137,5 @@ app.listen((process.env.PORT || 3000),function(){
         }	
         
     });
-  }, 1800000); // 30 mins
+  }, 900000); // 30 mins
 });
